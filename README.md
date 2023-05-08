@@ -17,32 +17,29 @@ Please note that only **accepted** papers (for reliability) by **conferences** (
     - [VisDial v1.0 test-std](#dis-v1.0-test)
     - [VisDial v1.0 test-std (with dense labels)](#dis-v1.0-test-dense)
     - [MNIST Dialog](#mnist-dialog)
-    - [GuessWhat ?!](#guess-what)
+    - [GuessWhat ?!](#guesswhat)
   - [Generative Methods](#generative-methods)
     - [VisDial v0.9 val](#gen-v0.9-val)
     - [VisDial v1.0 val](#gen-v1.0-val)
-    - [VisDial v1.0 test-std](#gen-v1.0-test)
-- [Public Datasets](#public-datasets)
 - [Paper List](#paper-list)
 - [Feedback](#feedback)
 
 ##
 
 ## Performance Tables
-The visual dialog models for both generative and discriminative tasks have been evaluated by the retrieval-based evaluation metrics: mean reciprocal rank (MRR), recall@k (R@k), mean rank (Mean), and normalized discounted cumulative gain (NDCG). Specifically, all dialogs in VisDial contain a list of 100 answer candidates for each visual question, and there is one ground-truth answer in the answer candidates. The model sorts the answer candidates by the log-likelihood scores and then is evaluated by the four different metrics. MRR, R@k, and Mean consider the rank of the single ground-truth answer, while NDCG considers all relevant answers from the 100-answers list by using the densely annotated relevance scores for all answer candidates. The community regards NDCG as the primary evaluation metric.
+The visual dialog models for both generative and discriminative tasks have been evaluated by the retrieval-based evaluation metrics: mean reciprocal rank (**MRR**), recall@k (**R@k**), mean rank (**Mean**), and normalized discounted cumulative gain (**NDCG**). Specifically, all dialogs in VisDial contain a list of 100 answer candidates for each visual question, and there is one ground-truth answer in the answer candidates. The model sorts the answer candidates by the log-likelihood scores and then is evaluated by the four different metrics. MRR, R@k, and Mean consider the rank of the single ground-truth answer, while NDCG considers all relevant answers from the 100-answers list by using the densely annotated relevance scores for all answer candidates. The community regards **NDCG** as the primary evaluation metric.
 
 In addition, links to the implementations are attached with their framework specification if available. 'o-' and 'u-' indicate the official and the unofficial implementations, respectively.
 
 \[Note\] <br/>
 *: re-implemented results <br/>
-&dagger;: use of dense labels <br/>
-&ddagger;: use of additional knowledge
+&dagger;: use of additional knowledge
 
 ##
 
 ### Discriminative Methods
 
-#### VisDial v0.9 val
+#### VisDial v0.9 val <span id = "dis-v0.9-val">
 | ID | Year | Venue |   Model<br/>(or Authors)   |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1 | 2017 | CVPR    | [LF](#1001)    | 58.07 | 43.82 | 74.68 | 84.07 | 5.78 |[`[o-torch]`](https://github.com/batra-mlp-lab/visdial)
@@ -65,10 +62,10 @@ In addition, links to the implementations are attached with their framework spec
 | 18 | 2020 | ACL    | [MVAN](#1026)  | 67.65 | 54.65 | 83.85 | 91.47 | 3.73 | [`[o-pytorch]`](https://github.com/taesunwhang/MVAN-VisDial)
 | 19 | 2020 | EMNLP   | [VD-BERT](#1028) | 70.04 | 57.79 | 85.34 | 92.68 | 4.04 | [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
 | 20 | 2022 | ICASSP   | [VU-BERT](#1031) | 63.33 | 48.71 | 81.03 | 89.10 | 4.19
-| 21 | 2022 | MM       | [AlignVD](#1034) | 71.65 | 59.64 | 88.30 | 94.72 | 2.96
+| 21 | 2022 | MM       | [AlignVD](#1034) | **71.65** | **59.64** | **88.30** | **94.72** | **2.96**
 
 
-#### VisDial v1.0 val
+#### VisDial v1.0 val <span id = "dis-v1.0-val">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:----:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1  | 2017 | CVPR    | [MN](#1001)*    | 55.13 | 60.42 | 46.09 | 78.14 | 88.05 | 4.63
@@ -84,17 +81,17 @@ In addition, links to the implementations are attached with their framework spec
 | 14 | 2021 | ICASSP  | [SGLKT](#1030)&dagger; | 74.54 | 59.10 | - | - | - | - |
 | 15 | 2022 | ICASSP  | [ICMU](#1032)   | 64.30 | 69.14 | 56.80 | 85.09 | 93.42 | 3.37
 | 16 | 2022 | CVPR    | [UTC](#1033)    | 63.22 | 68.58 | 55.48 | 85.38 | 93.20 | 3.28
-| 17 | 2022 | MM      | [AlignVD](#1034)| 67.22 | 70.45 | 57.64 | 87.06 | 94.20 | 3.05
+| 17 | 2022 | MM      | [AlignVD](#1034)| **67.22** | **70.45** | **57.64** | **87.06** | **94.20** | **3.05**
 
-#### VisDial v1.0 val (with dense labels)
+#### VisDial v1.0 val (with dense labels)  <span id = "dis-v1.0-val-dense">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:----:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1  | 2020 | CVPR    | [P1+P2](#1019)&dagger; | 73.63 | 50.56 | 37.99 | 63.98 | 77.95 | 7.26 | [`[o-pytorch]`](https://github.com/simpleshinobu/visdial-principles)
-| 2  | 2020 | ECCV    | [VisDial-BERT](#1023)&dagger; | 75.24 | 52.22 | 39.92 | 65.05 | 80.63 | 6.17 | [`[o-pytorch]`](https://github.com/vmurahari3/visdial-bert)
+| 2  | 2020 | ECCV    | [VisDial-BERT](#1023)&dagger; | **75.24** | **52.22** | **39.92** | **65.05** | **80.63** | **6.17** | [`[o-pytorch]`](https://github.com/vmurahari3/visdial-bert)
 | 3 | 2020 | ACL     | [MCA](#1027)&dagger;    | 72.18 | 46.92 | 32.09 | 63.85 | 78.06 | 7.37 | [`[o-pytorch]`](https://github.com/shubhamagarwal92/visdial_conv)
 
 
-#### VisDial v1.0 test-std
+#### VisDial v1.0 test-std <span id = "dis-v1.0-test">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:----:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1 | 2017 | CVPR  | [LF](#1001)          | 45.21 | 55.42 | 40.95 | 72.45 | 82.83 | 5.95 |[`[o-torch]`](https://github.com/batra-mlp-lab/visdial)
@@ -119,12 +116,12 @@ In addition, links to the implementations are attached with their framework spec
 | 20 | 2020 | EMNLP   | [VD-BERT](#1028)  | 59.96 | 65.44 | 51.63 | 82.23 | 90.68 | 3.90 | [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
 | 21 | 2021 | ICASSP  | [SGLKT](#1030)    | 61.97 | 62.28 | 48.15 | 79.65 | 89.10 | 4.34 
 | 22 | 2022 | ICASSP  | [ICMU](#1032)     | 61.30 | 66.82 | 53.50 | 83.05 | 92.05 | 3.59 
-| 23 | 2022 | CVPR    | [UTC](#1033)      | 64.60 | 68.70 | 55.73 | 84.93 | 93.08 | 3.32
-| 24 | 2022 | MM      | [AlignVD](#1034)  | 67.23 | 68.17 | 54.57 | 85.65 | 93.38 | 3.23
-| 25 | 2023 | CVPR    | [GST](#1035)&ddagger; | 64.91 | 68.44 | 55.05 | 85.18 | 93.35 | 3.23 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 23 | 2022 | CVPR    | [UTC](#1033)      | 64.60 | **68.70** | **55.73** | 84.93 | 93.08 | 3.32
+| 24 | 2022 | MM      | [AlignVD](#1034)  | **67.23** | 68.17 | 54.57 | **85.65** | **93.38** | **3.23**
+| 25 | 2023 | CVPR    | [GST](#1035)&ddagger; | 64.91 | 68.44 | 55.05 | 85.18 | 93.35 | **3.23** | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
 
-#### VisDial v1.0 test-std (with dense labels)
+#### VisDial v1.0 test-std (with dense labels) <span id = "dis-v1.0-test-dense">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:----:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1 | 2020 | CVPR  | [P1+P2](#1019)&dagger;      | 71.60 | 48.58 | 35.98 | 62.08 | 77.23 | 7.48 | [`[o-pytorch]`](https://github.com/simpleshinobu/visdial-principles)
@@ -133,28 +130,28 @@ In addition, links to the implementations are attached with their framework spec
 | 4 | 2020 | EMNLP   | [VD-BERT](#1028)&dagger;  | 74.54 | 46.72 | 33.15 | 61.58 | 77.15 | 7.18 | [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
 | 5 | 2021 | ICASSP  | [SGLKT](#1030)&dagger; | 72.60 | 58.01 | 46.20 | 71.01 | 83.20 | 5.85
 | 6 | 2022 | ICASSP  | [VU-BERT](#1031)&dagger; | 72.87 | 49.09 | 33.60 | 67.20 | 81.60 | 6.12
-| 7 | 2022 | MM      | [AlignVD](#1034)&dagger; | 78.70 | 45.75 | 29.50 | 65.70 | 82.45 | 6.64
-| 8 | 2023 | CVPR    | [GST](#1035)&dagger;&ddagger; | 71.76 | 68.09 | 55.18 | 83.68 | 91.93 | 3.57 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 7 | 2022 | MM      | [AlignVD](#1034)&dagger; | **78.70** | 45.75 | 29.50 | 65.70 | 82.45 | 6.64
+| 8 | 2023 | CVPR    | [GST](#1035)&dagger;&ddagger; | 71.76 | **68.09** | **55.18** | **83.68** | **91.93** | **3.57** | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
 
 #### MNIST Dialog
 | ID | Year | Venue |   Model<br/>(or Authors)   | Accuracy |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:--------:|:------:|
 | 1 | 2017 | NeurIPS | [AMEM](#1004)     | 96.39 | 
-| 2 | 2018 | ECCV    | [CorefNMN](#1008) | 99.30 |
+| 2 | 2018 | ECCV    | [CorefNMN](#1008) | **99.30** |
 
 
 
-### GuessWhat?!
+### GuessWhat?! <span id = "guesswhat">
 | ID | Year | Venue |   Model<br/>(or Authors)   | Train err | Val err | Test err | code |
 |:--:|:----:|:-----:|:--------------------------:|:---------:|:-------:|:--------:|:----:|
-| 1  | 2017 | CVPR   | [LSTM+VGG](#1002)  | 26.1 | 38.5 | 39.2 | [`[o-tensorflow]`](https://github.com/GuessWhatGame/guesswhat/)
+| 1  | 2017 | CVPR   | [LSTM+VGG](#1002)  | **26.1** | 38.5 | 39.2 | [`[o-tensorflow]`](https://github.com/GuessWhatGame/guesswhat/)
 | 2  | 2017 | CVPR   | [HRED+VGG](#1002)  | 27.4 | 38.4 | 39.6 | [`[o-tensorflow]`](https://github.com/GuessWhatGame/guesswhat/)
 | 3  | 2017 | CVPR   | [A-ATT](#1007)     | 26.7 | 33.7 | 34.2 |
-| 4  | 2019 | ICCV   | [HACAN](#1013)     | 26.1 | 32.3 | 33.2 |
+| 4  | 2019 | ICCV   | [HACAN](#1013)     | **26.1** | **32.3** | **33.2** |
 
 ### Generative Methods
-#### VisDial v0.9 val
+#### VisDial v0.9 val <span id = "gen-v0.9-val">
 | ID | Year | Venue |   Model<br/>(or Authors)   |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1  | 2017 | CVPR    | [LF](#1001)     | 51.99 | 41.83 | 61.78 | 67.59 | 17.07 | [`[o-torch]`](https://github.com/batra-mlp-lab/visdial)
@@ -164,16 +161,16 @@ In addition, links to the implementations are attached with their framework spec
 | 5  | 2017 | NeurIPS | [HCIAE](#1003)  | 53.86 | 44.06 | 63.55 | 69.24 | 16.01 | [`[o-pytorch]`](https://github.com/jiasenlu/visDial.pytorch)
 | 6  | 2018 | CVPR    | [CoAtt](#1006)  | 55.78 | 46.10 | 65.69 | 71.74 | 14.43 | 
 | 7  | 2018 | ECCV    | [CorefNMN](#1008) | 53.50 | 43.66 | 63.54 | 69.93 | 15.69 | 
-| 8  | 2019 | CVPR    | [RvA](#1011)    | 55.43 | 45.37 | 65.27 | 72.97 | 10.71 | [`[o-pytorch]`](https://github.com/yuleiniu/rva)
+| 8  | 2019 | CVPR    | [RvA](#1011)    | 55.43 | 45.37 | 65.27 | 72.97 | **10.71** | [`[o-pytorch]`](https://github.com/yuleiniu/rva)
 | 9  | 2019 | IJCAI   | [DVAN](#1012)   | 55.94 | 46.58 | 65.50 | 71.25 | 14.79 |
 | 10 | 2020 | AAAI    | [DMRM](#1016)   | 55.96 | 46.20 | 66.02 | 72.43 | 13.15 | [`[o-pytorch]`](https://github.com/phellonchen/DMRM)
 | 11 | 2020 | ECCV    | [LTMI](#1025)*  | 55.85 | 46.07 | 65.97 | 72.44 | 14.17 |
 | 12 | 2020 | EMNLP   | [VD-BERT](#1028)| 55.95 | 46.83 | 65.43 | 72.05 | 13.18 | [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
 | 13 | 2021 | ACL     | [MITVG](#1029)  | 56.83 | 47.14 | 67.19 | 73.72 | 11.95 |
 | 14 | 2022 | ICASSP  | [VU-BERT](#1031)| 54.04 | 44.50 | 62.60 | 71.70 | 12.49 |
-| 15 | 2023 | CVPR    | [GST&ddagger;](#1035) | 60.03 | 50.40 | 70.74 | 77.15 | 12.13 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 15 | 2023 | CVPR    | [GST&ddagger;](#1035) | **60.03** | **50.40** | **70.74** | **77.15** | 12.13 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
-#### VisDial v1.0 val
+#### VisDial v1.0 val <span id = "gen-v1.0-val">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
 |:--:|:----:|:-----:|:--------------------------:|:----:|:------:|:------:|:------:|:-------:|:-------:|:------:|
 | 1  | 2017 | CVPR    | [MN](#1001)*    | 56.99 | 47.83 | 38.01 | 57.49 | 64.08 | 18.76
@@ -186,9 +183,8 @@ In addition, links to the implementations are attached with their framework spec
 | 8  | 2020 | ECCV    | [LTMI](#1025)   | 63.58 | 50.74 | 40.44 | 61.61 | 69.71 | 14.93 |
 | 9  | 2021 | ACL     | [MITVG](#1029)  | 61.47 | 51.14 | 41.03 | 61.25 | 68.49 | 14.37 |
 | 10 | 2022 | CVPR    | [UTC](#1033)    | 63.86 | 52.22 | 42.56 | 62.40 | 69.51 | 15.67 |
-| 11 | 2023 | CVPR    | [GST](#1035)&ddagger; | 65.47 | 53.19 | 43.08 | 64.09 | 71.51 | 14.34 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 11 | 2023 | CVPR    | [GST](#1035)&dagger; | **65.47** | **53.19** | **43.08** | **64.09** | **71.51** | **14.34** | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
-##
 
 ## Paper List
 
@@ -211,7 +207,7 @@ In addition, links to the implementations are attached with their framework spec
 17. <span id = "1016">**[DMRM]**</span> | **AAAI'20** | DMRM: A Dual-channel Multi-hop Reasoning Model for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/1912.08360.pdf) | [`[o-pytorch]`](https://github.com/phellonchen/DMRM)
 18. <span id = "1017">**[CDF]**</span> | **AAAI'20** | Modality-Balanced Models for Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/2001.06354.pdf)
 19. <span id = "1018">**[DualVD]**</span> | **AAAI'20** | DualVD: An Adaptive Dual Encoding Model for Deep Visual Understanding in Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/1911.07251.pdf) | [`[o-pytorch]`](https://github.com/JXZe/DualVD)
-20. [Bridging Text and Video: A Universal Multimodal Transformer for Video-Audio Scene-Aware Dialog](https://arxiv.org/abs/2002.00163), AAAI 2020, [[code]](https://github.com/ictnlp/DSTC8-AVSD)
+20. <span id = "1036">**[RLM]**</span> | **AAAI'20** | Bridging Text and Video: A Universal Multimodal Transformer for Video-Audio Scene-Aware Dialog | [`[pdf]`](https://arxiv.org/pdf/2002.00163.pdf) | [`[o-pytorch]`](https://github.com/ictnlp/DSTC8-AVSD)
 21. <span id = "1019">**[P1+P2]**</span> | **CVPR'20** | Two Causal Principles for Improving Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/1911.10496.pdf) | [`[o-pytorch]`](https://github.com/simpleshinobu/visdial-principles)
 22. <span id = "1020">**[CAG]**</span> | **CVPR'20** | Iterative Context-Aware Graph Inference for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2004.02194.pdf) |
 23. <span id = "1021">**[DAM]**</span> | **IJCAI'20** | DAM: Deliberation, Abandon and Memory Networks for Generating Detailed and Non-repetitive Responses in Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/2007.03310.pdf) | [`[o-pytorch]`](https://github.com/JXZe/DAM)
@@ -229,7 +225,6 @@ In addition, links to the implementations are attached with their framework spec
 35. <span id = "1034">**[AlignVD]**</span> | **MM'22** | Unsupervised and Pseudo-Supervised Vision-Language Alignment in Visual Dialog | [`[pdf]`](https://dl.acm.org/doi/pdf/10.1145/3503161.3547776)
 36. <span id = "1035">**[GST]**</span> | **CVPR'23** | The Dialog Must Go On: Improving Visual Dialog via Generative Self-Training | [`[pdf]`](https://arxiv.org/pdf/2205.12502.pdf) | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
-##
 
 ## Feedback
 
