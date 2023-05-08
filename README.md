@@ -33,7 +33,8 @@ In addition, links to the implementations are attached with their framework spec
 
 \[Note\] <br/>
 *: re-implemented results <br/>
-&dagger;: use of additional knowledge
+&dagger;: use of dense labels <br/>
+&ddagger;: use of additional knowledge
 
 ##
 
@@ -168,7 +169,7 @@ In addition, links to the implementations are attached with their framework spec
 | 12 | 2020 | EMNLP   | [VD-BERT](#1028)| 55.95 | 46.83 | 65.43 | 72.05 | 13.18 | [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
 | 13 | 2021 | ACL     | [MITVG](#1029)  | 56.83 | 47.14 | 67.19 | 73.72 | 11.95 |
 | 14 | 2022 | ICASSP  | [VU-BERT](#1031)| 54.04 | 44.50 | 62.60 | 71.70 | 12.49 |
-| 15 | 2023 | CVPR    | [GST&ddagger;](#1035) | **60.03** | **50.40** | **70.74** | **77.15** | 12.13 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 15 | 2023 | CVPR    | [GST](#1035)&ddagger; | **60.03** | **50.40** | **70.74** | **77.15** | 12.13 | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
 #### VisDial v1.0 val <span id = "gen-v1.0-val">
 | ID | Year | Venue |   Model<br/>(or Authors)   | NDCG |  MRR   |  R@1   |  R@5   |  R@10   |   MEAN&darr;   |  code  |
@@ -183,7 +184,7 @@ In addition, links to the implementations are attached with their framework spec
 | 8  | 2020 | ECCV    | [LTMI](#1025)   | 63.58 | 50.74 | 40.44 | 61.61 | 69.71 | 14.93 |
 | 9  | 2021 | ACL     | [MITVG](#1029)  | 61.47 | 51.14 | 41.03 | 61.25 | 68.49 | 14.37 |
 | 10 | 2022 | CVPR    | [UTC](#1033)    | 63.86 | 52.22 | 42.56 | 62.40 | 69.51 | 15.67 |
-| 11 | 2023 | CVPR    | [GST](#1035)&dagger; | **65.47** | **53.19** | **43.08** | **64.09** | **71.51** | **14.34** | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+| 11 | 2023 | CVPR    | [GST](#1035)&ddagger; | **65.47** | **53.19** | **43.08** | **64.09** | **71.51** | **14.34** | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
 
 ## Paper List
@@ -207,23 +208,22 @@ In addition, links to the implementations are attached with their framework spec
 17. <span id = "1016">**[DMRM]**</span> | **AAAI'20** | DMRM: A Dual-channel Multi-hop Reasoning Model for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/1912.08360.pdf) | [`[o-pytorch]`](https://github.com/phellonchen/DMRM)
 18. <span id = "1017">**[CDF]**</span> | **AAAI'20** | Modality-Balanced Models for Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/2001.06354.pdf)
 19. <span id = "1018">**[DualVD]**</span> | **AAAI'20** | DualVD: An Adaptive Dual Encoding Model for Deep Visual Understanding in Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/1911.07251.pdf) | [`[o-pytorch]`](https://github.com/JXZe/DualVD)
-20. <span id = "1036">**[RLM]**</span> | **AAAI'20** | Bridging Text and Video: A Universal Multimodal Transformer for Video-Audio Scene-Aware Dialog | [`[pdf]`](https://arxiv.org/pdf/2002.00163.pdf) | [`[o-pytorch]`](https://github.com/ictnlp/DSTC8-AVSD)
-21. <span id = "1019">**[P1+P2]**</span> | **CVPR'20** | Two Causal Principles for Improving Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/1911.10496.pdf) | [`[o-pytorch]`](https://github.com/simpleshinobu/visdial-principles)
-22. <span id = "1020">**[CAG]**</span> | **CVPR'20** | Iterative Context-Aware Graph Inference for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2004.02194.pdf) |
-23. <span id = "1021">**[DAM]**</span> | **IJCAI'20** | DAM: Deliberation, Abandon and Memory Networks for Generating Detailed and Non-repetitive Responses in Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/2007.03310.pdf) | [`[o-pytorch]`](https://github.com/JXZe/DAM)
-24. <span id = "1022">**[KBGN]**</span> | **MM'20** | KBGN: Knowledge-Bridge Graph Network for Adaptive Vision-Text Reasoning in Visual Dialogue] | [`[pdf]`](https://arxiv.org/pdf/2008.04858.pdf)
-25. <span id = "1023">**[Visdial-Bert]**</span> | **ECCV'20** | Large-scale Pretraining for Visual Dialog: A Simple State-of-the-Art Baseline] | [`[pdf]`](https://arxiv.org/pdf/1912.02379.pdf) | [`[o-pytorch]`](https://github.com/vmurahari3/visdial-bert)
-26. <span id = "1025">**[LTMI]**</span> | **ECCV'20** | Efficient attention mechanism for visual dialog that can handle all the interactions between multiple inputs | [`[pdf]`](https://arxiv.org/pdf/1911.11390.pdf) | [`[o-pytorch]`](https://github.com/davidnvq/visdial)
-27. <span id = "1026">**[MVAN]**</span> | **ACL'20** | Multi-View Attention Network for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2004.14025.pdf) | [`[o-pytorch]`](https://github.com/taesunwhang/MVAN-VisDial)
-28. <span id = "1027">**[MCA]**</span> | **ACL'20** | History for Visual Dialog: Do we really need it? | [`[pdf]`](https://aclanthology.org/2020.acl-main.728.pdf) |  [`[o-pytorch]`](https://github.com/shubhamagarwal92/visdial_conv)
-29. <span id = "1028">**[VD-BERT]**</span> | **EMNLP'20** | VD-BERT: A Unified Vision and Dialog Transformer with BERT | [`[pdf]`](https://arxiv.org/pdf/2004.13278.pdf) |  [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
-30.  <span id = "1029">**[MITVG]**</span> | **ACL'21** | Multimodal Incremental Transformer with Visual Grounding for Visual Dialogue Generation | [`[pdf]`](https://arxiv.org/pdf/2109.08478.pdf) 
-31. <span id = "1030">**[SGLKT]**</span> | **EMNLP'21** | Reasoning Visual Dialog with Sparse Graph Learning and Knowledge Transfer | [`[pdf]`](https://arxiv.org/pdf/2004.06698.pdf) 
-32. <span id = "1031">**[VU-BERT]**</span> | **ICASSP'22** | VU-BERT: A Unified framework for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2202.10787.pdf)
-33. <span id = "1032">**[ICMU]**</span> | **ICASSP'22** | Improving Cross-Modal Understanding in Visual Dialog via Contrastive Learning | [`[pdf]`](https://arxiv.org/pdf/2204.07302.pdf)
-34. <span id = "1033">**[UTC]**</span> | **CVPR'22** | UTC: A Unified Transformer with Inter-Task Contrastive Learning for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2205.00423.pdf)
-35. <span id = "1034">**[AlignVD]**</span> | **MM'22** | Unsupervised and Pseudo-Supervised Vision-Language Alignment in Visual Dialog | [`[pdf]`](https://dl.acm.org/doi/pdf/10.1145/3503161.3547776)
-36. <span id = "1035">**[GST]**</span> | **CVPR'23** | The Dialog Must Go On: Improving Visual Dialog via Generative Self-Training | [`[pdf]`](https://arxiv.org/pdf/2205.12502.pdf) | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
+20. <span id = "1019">**[P1+P2]**</span> | **CVPR'20** | Two Causal Principles for Improving Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/1911.10496.pdf) | [`[o-pytorch]`](https://github.com/simpleshinobu/visdial-principles)
+21. <span id = "1020">**[CAG]**</span> | **CVPR'20** | Iterative Context-Aware Graph Inference for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2004.02194.pdf) |
+22. <span id = "1021">**[DAM]**</span> | **IJCAI'20** | DAM: Deliberation, Abandon and Memory Networks for Generating Detailed and Non-repetitive Responses in Visual Dialogue | [`[pdf]`](https://arxiv.org/pdf/2007.03310.pdf) | [`[o-pytorch]`](https://github.com/JXZe/DAM)
+23. <span id = "1022">**[KBGN]**</span> | **MM'20** | KBGN: Knowledge-Bridge Graph Network for Adaptive Vision-Text Reasoning in Visual Dialogue] | [`[pdf]`](https://arxiv.org/pdf/2008.04858.pdf)
+24. <span id = "1023">**[Visdial-Bert]**</span> | **ECCV'20** | Large-scale Pretraining for Visual Dialog: A Simple State-of-the-Art Baseline] | [`[pdf]`](https://arxiv.org/pdf/1912.02379.pdf) | [`[o-pytorch]`](https://github.com/vmurahari3/visdial-bert)
+25. <span id = "1025">**[LTMI]**</span> | **ECCV'20** | Efficient attention mechanism for visual dialog that can handle all the interactions between multiple inputs | [`[pdf]`](https://arxiv.org/pdf/1911.11390.pdf) | [`[o-pytorch]`](https://github.com/davidnvq/visdial)
+26. <span id = "1026">**[MVAN]**</span> | **ACL'20** | Multi-View Attention Network for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2004.14025.pdf) | [`[o-pytorch]`](https://github.com/taesunwhang/MVAN-VisDial)
+27. <span id = "1027">**[MCA]**</span> | **ACL'20** | History for Visual Dialog: Do we really need it? | [`[pdf]`](https://aclanthology.org/2020.acl-main.728.pdf) |  [`[o-pytorch]`](https://github.com/shubhamagarwal92/visdial_conv)
+28. <span id = "1028">**[VD-BERT]**</span> | **EMNLP'20** | VD-BERT: A Unified Vision and Dialog Transformer with BERT | [`[pdf]`](https://arxiv.org/pdf/2004.13278.pdf) |  [`[o-pytorch]`](https://github.com/salesforce/VD-BERT)
+29.  <span id = "1029">**[MITVG]**</span> | **ACL'21** | Multimodal Incremental Transformer with Visual Grounding for Visual Dialogue Generation | [`[pdf]`](https://arxiv.org/pdf/2109.08478.pdf) 
+30. <span id = "1030">**[SGLKT]**</span> | **EMNLP'21** | Reasoning Visual Dialog with Sparse Graph Learning and Knowledge Transfer | [`[pdf]`](https://arxiv.org/pdf/2004.06698.pdf) 
+31. <span id = "1031">**[VU-BERT]**</span> | **ICASSP'22** | VU-BERT: A Unified framework for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2202.10787.pdf)
+32. <span id = "1032">**[ICMU]**</span> | **ICASSP'22** | Improving Cross-Modal Understanding in Visual Dialog via Contrastive Learning | [`[pdf]`](https://arxiv.org/pdf/2204.07302.pdf)
+33. <span id = "1033">**[UTC]**</span> | **CVPR'22** | UTC: A Unified Transformer with Inter-Task Contrastive Learning for Visual Dialog | [`[pdf]`](https://arxiv.org/pdf/2205.00423.pdf)
+34. <span id = "1034">**[AlignVD]**</span> | **MM'22** | Unsupervised and Pseudo-Supervised Vision-Language Alignment in Visual Dialog | [`[pdf]`](https://dl.acm.org/doi/pdf/10.1145/3503161.3547776)
+35. <span id = "1035">**[GST]**</span> | **CVPR'23** | The Dialog Must Go On: Improving Visual Dialog via Generative Self-Training | [`[pdf]`](https://arxiv.org/pdf/2205.12502.pdf) | [`[o-pytorch]`](https://github.com/gicheonkang/gst-visdial)
 
 
 ## Feedback
